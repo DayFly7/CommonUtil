@@ -1,6 +1,5 @@
 package com.qy.common;
 
-import android.app.Activity;
 import android.util.Log;
 
 /**
@@ -8,16 +7,15 @@ import android.util.Log;
  */
 
 public class LogUtil {
-    private static boolean DEBUG = true;
+
+    public static boolean DEBUG = true;
+
+    public static void setLog(boolean DEBUG) {
+        LogUtil.DEBUG = DEBUG;
+    }
     public static void e(String tag, String msg){
         if (DEBUG){
             Log.e(tag,msg);
-        }
-    }
-
-    public static void e(Activity activity, String msg){
-        if (DEBUG){
-            Log.d(activity.getClass().getSimpleName()+activity.getClass().getSimpleName(),msg);
         }
     }
 }

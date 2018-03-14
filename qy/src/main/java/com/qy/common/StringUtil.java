@@ -20,7 +20,7 @@ public class StringUtil {
      * 判断不确定个数为空
      */
     public static boolean isEmpty(String ... strings){
-        boolean isHasEmpty = false;
+        boolean isHasEmpty;
         for (String s : strings) {
             if (isEmpty(s)){
                 isHasEmpty = true;
