@@ -1,12 +1,13 @@
 # CommonUtil
 Android工具类
-使用
-allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
-  dependencies {
-	        compile 'com.github.DayFly7:CommonUtil:v1.0.1'
-	}
+使用方式
+-----------
+allprojects {<br>
+		repositories {<br>
+			...<br>
+			maven { url 'https://jitpack.io' }<br>
+		}<br>
+	}<br>
+  dependencies {<br>
+	        compile 'com.github.DayFly7:CommonUtil:v1.0.1'<br>
+	}<br>
