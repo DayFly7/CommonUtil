@@ -1,7 +1,6 @@
 # CommonUtil
-Android工具类
+Android工具类<br>
 使用方式
------------
 allprojects {<br>
 		repositories {<br>
 			...<br>
