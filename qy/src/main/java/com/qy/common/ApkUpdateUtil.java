@@ -97,7 +97,6 @@ public class ApkUpdateUtil {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             installApk(context,new File(s));
-            listener.success();
         }
 
         //安装apk
@@ -125,7 +124,6 @@ public class ApkUpdateUtil {
 
     public interface OnDownLoadListener{
         void pre();
-        void success();
         void error();
         void update(int progress);
     }
