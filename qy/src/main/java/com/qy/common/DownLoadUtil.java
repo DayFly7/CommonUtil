@@ -41,7 +41,7 @@ public class DownLoadUtil {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            listener.pre();
+            listener.prepare();
         }
 
         @Override
@@ -96,34 +96,15 @@ public class DownLoadUtil {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            installApk(context,new File(s));
-        }
-
-        //安装apk
-        private void installApk(Context context,File file) {
-            Intent intent = new Intent();
-            // 执行动作
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.addCategory(Intent.CATEGORY_DEFAULT);
-            intent.setAction(Intent.ACTION_VIEW);
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                Uri contentUri = FileProvider.getUriForFile(context, context.getPackageName(), file);
-                intent.setDataAndType(contentUri, "application/vnd.android.package-archive");
-            } else {
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.setDataAndType(Uri.fromFile(file),
-                        "application/vnd.android.package-archive");
-            }
-            context.startActivity(intent);
+            listener.success(s);
         }
 
     }
 
 
     public interface OnDownLoadListener{
-        void pre();
+        void prepare();
+        void success(String filePath);
         void error();
         void update(int progress);
     }

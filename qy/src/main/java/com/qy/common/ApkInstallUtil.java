@@ -12,6 +12,7 @@ import java.io.File;
  */
 
 public class ApkInstallUtil {
+
     public static void installApk(Context context,File file) {
         Intent intent = new Intent();
         // 执行动作
