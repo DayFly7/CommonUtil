@@ -2,10 +2,8 @@ package com.qy.common;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import java.util.List;
 
 /**
@@ -42,7 +40,6 @@ public class SpUtil {
         String strJson = null;
         if (null != o) {
             Gson gson = new Gson();
-            //转换成json数据，再保存
             strJson = gson.toJson(o);
         }
         editor.putString(tag,strJson);
@@ -77,7 +74,6 @@ public class SpUtil {
         String strJson = null;
         if (null != list) {
             Gson gson = new Gson();
-            //转换成json数据，再保存
             strJson = gson.toJson(list);
         }
         editor.putString(tag,strJson);
