@@ -17,3 +17,15 @@ CommonUtil体积小，只集成常用功能<br>
 ### 4.屏幕分辨率相关功能
 ### 5.状态栏工具
 ### 6.SharePreference存取对象和list
+### 7.AsyncTask下载文件
+### 8.安装apk
+##### 
+<provider<br>
+            android:name="android.support.v4.content.FileProvider"<br>
+            android:authorities="包名"<br>
+            android:exported="false"<br>
+            android:grantUriPermissions="true"><br>
+            <meta-data<br>
+                android:name="android.support.FILE_PROVIDER_PATHS"<br>
+                android:resource="@xml/file_paths" /><br>
+        </provider><br>
