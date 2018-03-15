@@ -21,9 +21,9 @@ CommonUtil体积小，只集成常用功能<br>
 #### 6.SharePreference存取对象和list
 #### 7.AsyncTask下载文件
 #### 8.安装apk
-    不要忘记在xml里加上
 ```
-        <provider<br>
+        不要忘记在xml里加上
+        <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="包名"
             android:exported="false"
