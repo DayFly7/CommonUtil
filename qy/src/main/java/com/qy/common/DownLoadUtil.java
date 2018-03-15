@@ -24,17 +24,17 @@ import java.net.URLConnection;
  */
 
 public class DownLoadUtil {
-    public static void startDownload(Context context,String url,String fileName,OnDownLoadListener listener){
-        DownloadApk downloadApk = new DownloadApk(context,listener);
+    public static void startDownload(String url,String fileName,OnDownLoadListener listener){
+        DownloadApk downloadApk = new DownloadApk(listener);
         downloadApk.execute(url,fileName);
     }
 
     private static class DownloadApk extends AsyncTask<String, Integer, String> {
         private OnDownLoadListener listener;
-        private Context context;
+        String ph;
+        String fileName;
 
-        public DownloadApk(Context context,OnDownLoadListener listener) {
-            this.context = context;
+        public DownloadApk(OnDownLoadListener listener) {
             this.listener = listener;
         }
 
@@ -47,8 +47,8 @@ public class DownLoadUtil {
         @Override
         protected String doInBackground(String... params) {
             String downloadUrl = params[0];
-            String fileName = params[1];
-            String ph = Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
+            fileName = params[1];
+            ph = Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
             InputStream is = null;
             byte[] buf = new byte[2048];
             int len = 0;
@@ -84,7 +84,7 @@ public class DownLoadUtil {
                 } catch (IOException e) {
                 }
             }
-            return downloadUrl + fileName;
+            return ph + fileName;
         }
 
         @Override
@@ -96,7 +96,7 @@ public class DownLoadUtil {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            listener.success(s);
+            listener.success(ph + fileName);
         }
 
     }
