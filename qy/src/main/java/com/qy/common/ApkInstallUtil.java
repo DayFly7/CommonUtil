@@ -12,7 +12,7 @@ import java.io.File;
  */
 
 public class ApkInstallUtil {
-    private void installApk(Context context,File file) {
+    public static void installApk(Context context,File file) {
         Intent intent = new Intent();
         // 执行动作
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
