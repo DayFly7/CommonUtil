@@ -1,14 +1,16 @@
 # CommonUtil
 ## 使用方式<br>
-allprojects {<br>
-		repositories {<br>
-			...<br>
-			maven { url 'https://jitpack.io' }<br>
-		}<br>
-	}<br>
-  dependencies {<br>
-	        compile 'com.github.DayFly7:CommonUtil:v1.0.1'<br>
-	}<br>
+```
+allprojects {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
+}
+dependencies {
+    compile 'com.github.DayFly7:CommonUtil:v1.0.1'
+}
+```
 ## 介绍<br>
 CommonUtil体积小，只集成常用功能<br>
 ### 1.Log和Toast <br>
@@ -19,9 +21,9 @@ CommonUtil体积小，只集成常用功能<br>
 ### 6.SharePreference存取对象和list
 ### 7.AsyncTask下载文件
 ### 8.安装apk
-##### 不要忘记在xml里加上
+    不要忘记在xml里加上
 ```
-<provider<br>
+        <provider<br>
             android:name="android.support.v4.content.FileProvider"<br>
             android:authorities="包名"<br>
             android:exported="false"<br>
