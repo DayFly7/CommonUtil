@@ -23,8 +23,8 @@ import java.net.URLConnection;
  * Created by Administrator on 2018-3-14.
  */
 
-public class ApkUpdateUtil {
-    public static void startUpdateApk(Context context,String url,String fileName,OnDownLoadListener listener){
+public class DownLoadUtil {
+    public static void startDownload(Context context,String url,String fileName,OnDownLoadListener listener){
         DownloadApk downloadApk = new DownloadApk(context,listener);
         downloadApk.execute(url,fileName);
     }
