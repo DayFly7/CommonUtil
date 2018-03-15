@@ -8,7 +8,7 @@ allprojects {
     }
 }
 dependencies {
-    compile 'com.github.DayFly7:CommonUtil:v1.0.1'
+    compile 'com.github.DayFly7:CommonUtil:v1.0.2'
 }
 ```
 ## 介绍<br>
@@ -24,12 +24,12 @@ CommonUtil体积小，只集成常用功能<br>
     不要忘记在xml里加上
 ```
         <provider<br>
-            android:name="android.support.v4.content.FileProvider"<br>
-            android:authorities="包名"<br>
-            android:exported="false"<br>
-            android:grantUriPermissions="true"><br>
-            <meta-data<br>
-                android:name="android.support.FILE_PROVIDER_PATHS"<br>
-                android:resource="@xml/file_paths" /><br>
-        </provider><br>
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="包名"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 ```
