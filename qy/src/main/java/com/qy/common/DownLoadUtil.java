@@ -1,18 +1,7 @@
 package com.qy.common;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Environment;
-import android.support.v4.content.FileProvider;
-import android.util.Log;
-
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,6 +13,7 @@ import java.net.URLConnection;
  */
 
 public class DownLoadUtil {
+
     public static void startDownload(String url,String fileName,OnDownLoadListener listener){
         DownloadApk downloadApk = new DownloadApk(listener);
         downloadApk.execute(url,fileName);
@@ -98,7 +88,6 @@ public class DownLoadUtil {
             super.onPostExecute(s);
             listener.success(ph + fileName);
         }
-
     }
 
     public interface OnDownLoadListener{
