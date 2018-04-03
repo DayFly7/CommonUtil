@@ -21,7 +21,6 @@ public abstract class BaseFragment extends Fragment {
     private boolean isPrepared;
     private boolean isFirst = true;
 
-
     public int page = 1;
     public void pageAdd(){
         page = page +1;
