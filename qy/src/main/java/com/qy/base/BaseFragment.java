@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.qy.common.ToastUtil;
 
 /**
  * Created by qyang on 2018-3-15.
@@ -17,6 +20,18 @@ public abstract class BaseFragment extends Fragment {
     protected boolean isVisible;
     private boolean isPrepared;
     private boolean isFirst = true;
+
+
+    public int page = 1;
+    public void pageAdd(){
+        page = page +1;
+    }
+    public void pageReset(){
+        page = 1;
+    }
+    public String getCurrentPage(){
+        return page +"";
+    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -86,5 +101,36 @@ public abstract class BaseFragment extends Fragment {
 
     public void start(Class<?> cls) {
         startActivity(new Intent(getActivity(),cls));
+    }
+
+    public boolean checkIsOk(BaseResult result){
+        if (result != null){
+            if (result.isSuccess()){
+                return true;
+            }
+            ToastUtil.showToast(getActivity(),"数据异常");
+            return false;
+        }
+        ToastUtil.showToast(getActivity(),"数据异常");
+        return false;
+    }
+
+
+    public void refreshDismiss(SwipeRefreshLayout swipe){
+        if(swipe.isRefreshing()){
+            swipe.setRefreshing(false);
+        }
+    }
+
+    public void refreshDismissOnUI(final SwipeRefreshLayout swipe){
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if(swipe.isRefreshing()){
+                    swipe.setRefreshing(false);
+                }
+            }
+        });
+
     }
 }

@@ -4,17 +4,31 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import com.qy.R;
+import com.qy.common.ToastUtil;
+
 /**
  * Created by qyang on 2018-2-26.
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
+    public int page = 1;
+    public void pageAdd(){
+        page = page +1;
+    }
+    public void pageReset(){
+        page = 1;
+    }
+    public String getCurrentPage(){
+        return page +"";
+    }
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,6 +129,36 @@ public abstract class BaseActivity extends AppCompatActivity {
             }
         }
         return false;
+    }
+
+    public boolean checkIsOk(BaseResult result){
+        if (result != null){
+            if (result.isSuccess()){
+                return true;
+            }
+            ToastUtil.showToast(this,"数据异常");
+            return false;
+        }
+        ToastUtil.showToast(this,"数据异常");
+        return false;
+    }
+
+    public void refreshDismiss(SwipeRefreshLayout swipe){
+        if(swipe.isRefreshing()){
+            swipe.setRefreshing(false);
+        }
+    }
+
+    public void refreshDismissOnUI(final SwipeRefreshLayout swipe){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if(swipe.isRefreshing()){
+                    swipe.setRefreshing(false);
+                }
+            }
+        });
+
     }
 
 }
