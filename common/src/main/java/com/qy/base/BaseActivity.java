@@ -71,6 +71,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         startActivityForResult(intent,requestCode);
     }
 
+    public Bundle getBundle(){
+        return getIntent().getExtras();
+    }
+
     public interface OnBundleListener{
         Bundle onSetBundle(Bundle bundle);
     }

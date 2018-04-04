@@ -158,6 +158,10 @@ public abstract class BaseFragment extends Fragment {
         startActivityForResult(intent,requestCode);
     }
 
+    public Bundle getBundle(){
+        return getActivity().getIntent().getExtras();
+    }
+
     public interface OnBundleListener{
         Bundle onSetBundle(Bundle bundle);
     }

@@ -1,32 +1,14 @@
 package com.myjar;
 
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 
-import com.myjar.base.BaseActivity;
 
-public class MainActivity extends BaseActivity {
-
+public class MainActivity extends AppCompatActivity {
     @Override
-    public void initView() {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                start(SecondActivity.class, new OnBundleListener() {
-                    @Override
-                    public Bundle onSetBundle(Bundle bundle) {
-                        bundle.putString("qq","qqqqqq");
-                        return bundle;
-                    }
-                });
-            }
-        });
-    }
-
-    @Override
-    public void initData() {
-
     }
 }
