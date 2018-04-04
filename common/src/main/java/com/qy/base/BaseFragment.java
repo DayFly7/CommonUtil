@@ -133,6 +133,7 @@ public abstract class BaseFragment extends Fragment {
 
     }
 
+
     public void startForResult(Class<?> cls,int requestCode){
         Intent intent = new Intent(getActivity(),cls);
         getActivity().startActivityForResult(intent,requestCode);
