@@ -76,6 +76,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
 
+
     /**
      * 隐藏软件盘
      */
