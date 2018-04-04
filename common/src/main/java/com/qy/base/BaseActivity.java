@@ -14,11 +14,15 @@ import android.widget.EditText;
 import com.qy.R;
 import com.qy.common.ToastUtil;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by qyang on 2018-2-26.
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
+
     public int page = 1;
     public void pageAdd(){
         page = page +1;
@@ -29,6 +33,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     public String getCurrentPage(){
         return page +"";
     }
+
+
+    /**
+     * 上传图片是单张连续上传的，记录当前上传到第几张，再得到上传成功之后返回的图片路径
+     */
+    public int mCurrentPicPos = 0;
+    public List<String> getUrls;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
