@@ -132,4 +132,33 @@ public abstract class BaseFragment extends Fragment {
         });
 
     }
+
+
+    public void startForResult(Class<?> cls,int requestCode){
+        Intent intent = new Intent(getActivity(),cls);
+        getActivity().startActivityForResult(intent,requestCode);
+    }
+
+    public void startForResult(Class<?> cls,int requestCode,OnBundleListener listener){
+        Intent intent = new Intent(getActivity(),cls);
+        Bundle bundle = new Bundle();
+        intent.putExtras(listener.onSetBundle(bundle));
+        getActivity().startActivityForResult(intent,requestCode);
+    }
+
+    public void startForResultFragment(Class<?> cls,int requestCode){
+        Intent intent = new Intent(getActivity(),cls);
+        startActivityForResult(intent,requestCode);
+    }
+
+    public void startForResultFragment(Class<?> cls,int requestCode,OnBundleListener listener){
+        Intent intent = new Intent(getActivity(),cls);
+        Bundle bundle = new Bundle();
+        intent.putExtras(listener.onSetBundle(bundle));
+        startActivityForResult(intent,requestCode);
+    }
+
+    public interface OnBundleListener{
+        Bundle onSetBundle(Bundle bundle);
+    }
 }

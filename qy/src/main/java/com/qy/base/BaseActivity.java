@@ -52,14 +52,23 @@ public abstract class BaseActivity extends AppCompatActivity {
         finish();
     }
 
-    /**
-     * 页面跳转（携带数据）
-     */
     public void start(Class<?> cls,OnBundleListener listener) {
         Intent intent = new Intent(this, cls);
         Bundle bundle = new Bundle();
         intent.putExtras(listener.onSetBundle(bundle));
         startActivity(intent);
+    }
+
+    public void startForResult(Class<?> cls,int requestCode){
+        Intent intent = new Intent(this,cls);
+        startActivityForResult(intent,requestCode);
+    }
+
+    public void startForResult(Class<?> cls,int requestCode,OnBundleListener listener){
+        Intent intent = new Intent(this,cls);
+        Bundle bundle = new Bundle();
+        intent.putExtras(listener.onSetBundle(bundle));
+        startActivityForResult(intent,requestCode);
     }
 
     public interface OnBundleListener{
