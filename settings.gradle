@@ -1,1 +1,1 @@
-include ':app', ':qy'
+include ':app', ':common'
