@@ -45,9 +45,11 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
+        initObject();
         initData();
     }
     public abstract void initView();
+    public abstract void initObject();
     public abstract void initData();
 
     /**
