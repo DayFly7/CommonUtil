@@ -22,7 +22,6 @@ import java.util.List;
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
-
     public int page = 1;
     public void pageAdd(){
         page = page +1;
@@ -33,7 +32,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     public String getCurrentPage(){
         return page +"";
     }
-
 
     /**
      * 上传图片是单张连续上传的，记录当前上传到第几张，再得到上传成功之后返回的图片路径

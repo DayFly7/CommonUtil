@@ -79,7 +79,6 @@ public abstract class BaseFragment extends Fragment {
         initData();
     }
 
-
     /**
      * 初始化布局，请不要把耗时操作放在这个方法里，这个方法用来提供一个
      * 基本的布局而非一个完整的布局，以免ViewPager预加载消耗大量的资源。

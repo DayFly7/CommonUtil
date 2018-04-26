@@ -133,7 +133,6 @@ public class StatusBarUtil {
             setRootView(activity);
         }
     }
-
     /**
      * 为DrawerLayout 布局设置状态栏变色
      *

@@ -8,7 +8,6 @@ import android.util.Log;
 
 public class LogUtil {
     public static boolean DEBUG = true;
-
     public static void setLog(boolean DEBUG) {
         LogUtil.DEBUG = DEBUG;
     }

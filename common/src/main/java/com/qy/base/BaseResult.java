@@ -7,6 +7,7 @@ import java.io.Serializable;
  */
 
 public class BaseResult implements Serializable{
+
     private boolean success;
 
     public boolean isSuccess() {

@@ -97,5 +97,4 @@ public class DownLoadUtil {
         void update(int progress);
     }
 
-
 }
