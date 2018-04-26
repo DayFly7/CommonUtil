@@ -21,7 +21,4 @@ import java.util.List;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-
-
-
 }
