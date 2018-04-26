@@ -22,7 +22,6 @@ import java.util.List;
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
-
     public int page = 1;
     public void pageAdd(){
         page = page +1;
