@@ -11,14 +11,12 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-import com.qy.R;
 import com.qy.common.ToastUtil;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by qyang on 2018-2-26.
+ * Created by qyang on 2018-4-26.
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
@@ -38,6 +36,8 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     public int mCurrentPicPos = 0;
     public List<String> getUrls;
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -187,8 +187,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         });
 
     }
-
-
 
 
 
