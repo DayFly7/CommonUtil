@@ -46,6 +46,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         initObject();
         initData();
     }
+
     public abstract void initView();
     public abstract void initObject();
     public abstract void initData();
